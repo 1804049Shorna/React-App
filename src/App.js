@@ -3,13 +3,15 @@ import './App.css';
 import Modul from './components/modul.js';
 import TEXTFROM from './components/Textform.js';
 
+import React,{useState} from "react";
+
 
 
 function App() {
   return (
   <>
   <Modul title="TEXTAPP"/>
-   <TEXTFROM/>
+   <TEXTFROM  heading="Enter your text here"/>
   </>
 
   );
