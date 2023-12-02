@@ -29,15 +29,17 @@ export default function Textform(props) {
 
  return (
    <>
-     <div className="container">
+     <div className="container" style={{color: props.mode==='dark' ? 'white' : 'black' }}>
        <h1>{props.heading}</h1>
-       <div className="mb-3">
+       <div className="mb-3" style={{color: props.mode==='dark' ? 'white' : 'black' }}>
          <textarea
            className="form-control"
            id="exampleFormControlTextarea1"
            rows="3"
            value={text}
            onChange={handleChange}
+           style={{backgroundColor: props.mode==='dark' ? 'gray' : 'white' ,color: props.mode==='dark' ? 'white' : 'black' }}
+            // style={{color: props.mode==='dark' ? 'white' : 'black' },}
          ></textarea>
        </div>
        <div dangerouslySetInnerHTML={{ __html: isBold ? `<strong>${text}</strong>` : text }}></div>
@@ -46,11 +48,11 @@ export default function Textform(props) {
        <button className="btn btn-info mx-2" onClick={handleremClick}>Clear Text</button>
        <button className="btn btn-dark mx-2" onClick={handleboldClick}>Bold Text</button>
      </div>
-     <div className="container mb-2">
+     <div className="container mb-2"  style={{color: props.mode==='dark' ? 'white' : 'black' }}>
        You have {text.length} characters in your sentence 
        and {text.split(" ").length} words
      </div>
-     <p className="container mb-3">You need {.0008 * text.split(" ").length} time to read this paragraph</p>
+     <p className="container mb-3" style={{color: props.mode==='dark' ? 'white' : 'black' }}>You need {.0008 * text.split(" ").length} time to read this paragraph</p>
    </>
  );
 }
