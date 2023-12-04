@@ -1,14 +1,13 @@
 import React, { useState } from "react";
+import './Modul.css';
 
 export default function Modul(props) {
  
-  const[color ,setColor]=useState('light');
+  const[color ,setColor]=useState('white');
 
- const handlemode=()=>{
-     props.mode="dark";
- }
+
  const changecolor1=()=>{
-   if(color==='light')
+   if(color==='white')
    {
       document.body.style.backgroundColor='#ffc107';
       setColor ('#ffc107');
@@ -16,13 +15,33 @@ export default function Modul(props) {
    else if(color==='#ffc107')
    {
      document.body.style.backgroundColor='white';
-     setColor('#ffc107')
+     setColor('white')
+   }
+   else{
+    document.body.style.backgroundColor='#ffc107';
+    setColor('#ffc107')
+
    }
   
   
  }
  const changecolor2=()=>{
-   document.body.style.backgroundColor='#d63384';
+   
+   if(color==='white')
+   {
+      document.body.style.backgroundColor='#d63384';
+      setColor ('#d63384');
+   }
+   else if(color==='#d63384')
+   {
+     document.body.style.backgroundColor='white';
+     setColor('white')
+   }
+   else{
+    document.body.style.backgroundColor='#d63384';
+    setColor('#d63384')
+   }
+  
  }
  return (
    <nav
@@ -56,9 +75,9 @@ export default function Modul(props) {
              </a>
            </li>
          </ul>
-         <button className="Newbtn1" onClick={changecolor1}>Green</button>
-         <button className="Newbtn2" onClick={changecolor2}>Yellow</button>
-         <button className="Newbtn3"></button>
+         <button className="Newbtn1" onClick={changecolor1}></button>
+         <button className="Newbtn2" onClick={changecolor2}></button>
+         
 
          <div className={`form-check form-switch text-${ props.mode==='light' ? 'dark' : 'light'}`}>
            <input
